@@ -34,6 +34,7 @@ gem 'rails-i18n', '~> 5.1'
 gem 'ransack'
 gem 'kaminari'
 gem 'jquery-rails'
+gem 'rails_12factor', group: :production
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
