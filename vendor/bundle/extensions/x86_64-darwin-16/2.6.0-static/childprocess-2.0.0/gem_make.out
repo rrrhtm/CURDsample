@@ -1,0 +1,5 @@
+current directory: /Users/Hiroakimonma/workspace/CURDsample/vendor/bundle/gems/childprocess-2.0.0/ext
+/Users/Hiroakimonma/.rbenv/versions/2.6.1/bin/ruby mkrf_conf.rb
+
+current directory: /Users/Hiroakimonma/workspace/CURDsample/vendor/bundle/gems/childprocess-2.0.0/ext
+/Users/Hiroakimonma/.rbenv/versions/2.6.1/bin/ruby -rrubygems /Users/Hiroakimonma/workspace/CURDsample/vendor/bundle/gems/rake-12.3.3/exe/rake RUBYARCHDIR\=/Users/Hiroakimonma/workspace/CURDsample/vendor/bundle/extensions/x86_64-darwin-16/2.6.0-static/childprocess-2.0.0 RUBYLIBDIR\=/Users/Hiroakimonma/workspace/CURDsample/vendor/bundle/extensions/x86_64-darwin-16/2.6.0-static/childprocess-2.0.0

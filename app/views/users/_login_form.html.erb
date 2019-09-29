@@ -1,0 +1,23 @@
+<%= render :partial => "application/header" %>
+<% flash.each do |type,msg| %>
+  <div class="alert alert-<%=type %>" role="alert"><%= msg %></div>
+<% end %>
+<h1>ログイン</h1>
+
+<div class="box9">
+    <h4>ユーザー登録が面倒な方は以下ID、Passでログインして下さい。</h4>
+    <p>ユーザー名：traial01</p>
+    <p>パスワード：traial01pass</p>
+</div>
+<%= form_for(:session, method: :post, url: login_path) do |f| %>
+  <div class="form-group">
+    <%= f.label :name, 'ユーザー名' %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password, 'パスワード' %>
+    <%= f.password_field :password, class: 'form-control' %>
+  </div>
+  <%= f.submit 'ログイン', class: 'btn btn-primary' %>
+  <%= link_to 'ユーザー作成はこちらから', new_user_path, class: 'btn btn-outline-dark' %>
+<% end %>

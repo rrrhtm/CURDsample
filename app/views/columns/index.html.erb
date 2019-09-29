@@ -1,0 +1,44 @@
+
+<%= render :partial => "application/header" %>
+    <% flash.each do |type,msg| %>
+      <div class="alert alert-<%=type %>" role="alert"><%= msg %></div>
+    <% end %>
+    <body>
+      <%= link_to "新規作成", new_column_path, class: 'btn btn-outline-dark' %>
+      <%= search_form_for @q do |f| %>
+        <%= f.label :title, "検索ワード(タイトル)" %>
+        <%= f.search_field :title_cont %>
+      <%= f.submit "検索" %>
+      <% end %>
+      <tbody>
+      <table class="table table-hover boards__table">
+        <thead class="thead-dark">
+          <tr>
+          <th><%= sort_link(@q, :userid, '投稿者ID') %></th>
+          <th>投稿者名</th>
+          <th>タイトル</th>
+          <th>本文</th>
+          <th>画像ファイル</th>
+          <th>カテゴリ</th>
+          <th>備考</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+            <tbody>
+          <tr>
+            <% @columns.each do |column| %>
+              <th><%= column.userid  %></th>
+              <th><%= column.username  %></th>
+              <th><%= column.title.truncate(25) %></th>
+              <th><%= column.body.truncate(200) %></th>
+              <th><%= image_tag column.image.to_s, :size =>'150x150'%></th>
+              <th><%= column.category %></th>
+              <th><%= column.state %></th>
+              <td><%= link_to '詳細', column, class: 'btn btn-outline-dark' %></td>
+          </tr>
+          <% end %>
+          
+        </tbody>
+    </body>
+<%= paginate @columns %>

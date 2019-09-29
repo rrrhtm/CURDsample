@@ -1,0 +1,30 @@
+
+<%= render :partial => "application/header" %>
+<h2>コラム編集</h2>
+
+<%= form_for @column do |f| %>
+  <div class="form-group">
+    <%= f.label :title, 'タイトル' %>
+    <%= f.text_field :title, class: 'form-control' %>
+    <small class="form-text text-muted">50文字まで入力できます</small>
+  </div>
+  <div class="form-group">
+    <%= f.label :body, '本文' %>
+    <%= f.text_area :body, class: 'form-control', rows: 20 %>
+  </div>
+    <div class="form-group">
+    <%= f.label :画像ファイル %><br>
+    <%= f.file_field :image %>
+  </div>
+  <div class="form-group">
+    <p>カテゴリ</p>
+    <%= f.select :category, [["IT関連", "it"], ["音楽関連", "music"],  ["ガジェット", "gadget"], ["その他雑記", "other"] ],  :prompt => "選択してください" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :state, '備考・メモ書き' %>
+    <%= f.text_area :state, class: 'form-control', rows: 10 %>
+  </div>
+  <td><%= link_to '削除', column_path, class: 'btn btn-danger', method: :delete %></td>
+  <%= link_to '戻る', columns_path, class: 'btn btn-outline-dark' %>
+  <%= f.submit '保存', class: 'btn btn-primary' %>
+<% end %>

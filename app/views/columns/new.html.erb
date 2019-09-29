@@ -1,0 +1,38 @@
+
+<%= render :partial => "application/header" %>
+<h2>新規作成</h2>
+<%= form_for @column do |f| %>
+  <div class="form-group">
+    <%= f.label :title, 'タイトル' %>
+    <%= f.text_field :title, class: 'form-control' %>
+    <small class="form-text text-muted">50文字まで入力できます。空欄NG。</small>
+  </div>
+  <div class="form-group">
+    <%= f.label :body, '本文' %>
+    <%= f.text_area :body, class: 'form-control', rows: 20 %>
+    <small class="form-text text-muted">文字数制限無し。空欄NG。</small>
+  </div>
+    <div class="form-group">
+    <%= f.label :画像ファイル %><br>
+    <%= f.file_field :image %>
+    <small class="form-text text-muted">任意で添付。</small>
+  </div>
+  <div class="form-group">
+    <p>カテゴリ</p>
+    <%= f.select :category, [["IT関連", "it"], ["音楽関連", "music"],  ["ガジェット", "gadget"], ["その他雑記", "other"] ],  :prompt => "選択してください" %>
+    <small class="form-text text-muted">いずれかを必ず選択して下さい。</small>
+  </div>
+  <div class="form-group">
+    <%= f.label :state, '備考・メモ書き' %>
+    <%= f.text_area :state, class: 'form-control', rows: 10 %>
+    <small class="form-text text-muted">特筆事項などあれば。</small>
+  </div>
+  <div class="form-group">
+    <%= f.hidden_field :userid, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.hidden_field :username, class: 'form-control' %>
+  </div>
+  <%= link_to '戻る', columns_path, class: 'btn btn-outline-dark' %>
+  <%= f.submit '保存', class: 'btn btn-primary' %>
+<% end %>

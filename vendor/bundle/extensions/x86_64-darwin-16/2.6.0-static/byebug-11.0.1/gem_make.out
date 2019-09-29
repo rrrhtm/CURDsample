@@ -1,0 +1,19 @@
+current directory: /Users/Hiroakimonma/workspace/CURDsample/vendor/bundle/gems/byebug-11.0.1/ext/byebug
+/Users/Hiroakimonma/.rbenv/versions/2.6.1/bin/ruby -I /Users/Hiroakimonma/.rbenv/versions/2.6.1/lib/ruby/site_ruby/2.6.0 -r ./siteconf20190918-38818-enl285.rb extconf.rb
+creating Makefile
+
+current directory: /Users/Hiroakimonma/workspace/CURDsample/vendor/bundle/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/Hiroakimonma/workspace/CURDsample/vendor/bundle/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/Hiroakimonma/workspace/CURDsample/vendor/bundle/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20190918-38818-11k8qml/byebug
